@@ -1,0 +1,53 @@
+# Names from the shipped Kilbride Group fixture. After a customisation pass
+# none of these should survive anywhere in the .dc.html file. One term per
+# line; blank lines and # comments ignored.
+#
+# If you re-cut the template against a different fixture, replace this list.
+
+# the client and its owner
+Kilbride
+Martin Kilbride
+
+# staff
+Aoife Nolan
+Séamus Byrne
+Tom Walsh
+Niamh Cronin
+
+# customers, suppliers and their people
+Casey Builders
+Dermot Casey
+Dunne & Sons
+Liam Dunne
+Fitzgerald Heating
+Máire Fitzgerald
+Munster Plumbing
+Cathal Moore
+Riverside Developments
+Glanmire Mechanical
+McKenna Transport
+Ó Riain
+Paul Ó Riain
+
+# places
+Ballincollig
+Glanmire
+Mallow
+Little Island
+Cork
+
+# systems this fixture happened to run
+Xero
+Sage
+HubSpot
+
+# sector vocabulary that will read wrong for another industry
+installer
+boiler
+depot
+trade counter
+stocktake
+VAT return
+
+# the builder's own first name, which leaked into the original fixture
+Mac

@@ -1,0 +1,13 @@
+# nothing here is built, so this is mostly to keep editor and OS noise out
+.DS_Store
+Thumbs.db
+node_modules/
+*.log
+
+# the preview runtime writes this next to a served project
+data/storage.json
+
+# scratch copies made while customising
+*.bak
+*.orig
+*~
