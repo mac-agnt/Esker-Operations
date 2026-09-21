@@ -27,7 +27,9 @@ const BLOCKS = [
   "AUTOMATION_ROWS","HEALTH_TILES","HEALTH_FAILURES","HEALTH_CALLS","NOTIFICATION_FEED",
   "MODULE_ROWS","HOME_SUGGESTIONS","HOME_ACTIVITY","MINI_SUGGESTIONS","VISIT_WIDGET",
   "SCHEDULE_NEXT","ROLES","ACTIVITY_KPIS","BUILDER_BLOCKS","PALETTE_RECENT",
-  "CONTACT_SEARCH","EVENT_DIFF","PALETTE_FREQUENT","MINI_NOTIFICATIONS"
+  "CONTACT_SEARCH","EVENT_DIFF","PALETTE_FREQUENT","MINI_NOTIFICATIONS",
+  "LOADS_SECTIONS","LOADS","COLLECTIONS","ORDERS","TRUCKS","DRIVERS","BELL_SHEETS","PRODUCTION",
+  "DISPATCH_AGENDA","STANDING_ORDERS"
 ];
 
 global.window = {innerWidth:1440, devicePixelRatio:2, addEventListener(){}, removeEventListener(){}};
@@ -76,8 +78,13 @@ const render = (patch) => {
   catch { /* a state combination that will not render is not this check's problem */ }
 };
 
-["Home","Agents","Dashboard","Work","Records","Activity","Settings",
+["Home","Loads","Agents","Dashboard","Work","Records","Activity","Settings",
  "Automations","System health","Installed modules"].forEach(p => render({page:p}));
+["today","orders","production","trucks","drivers"].forEach(s => render({page:"Loads", loadsSection:s}));
+render({page:"Loads", loadsSection:"today", loadsFilter:{today:"collections"}});
+render({page:"Loads", loadsSection:"production", bellFilter:"all"});
+[["today","DL-48219"],["orders","OR-7729"],["trucks","ESK-07"],["drivers","ESK-12"]].forEach(o =>
+  render({page:"Loads", loadsSection:o[0], loadsOpen:{section:o[0], id:o[1]}}));
 ["people","teams","structure","agents","wf","notif","integrations","modules","health",
  "security","audit","datamgmt","brand","appearance"].forEach(a => render({page:"Settings", adminOpen:a}));
 ["tasks","approvals","workflows","schedules"].forEach(w => render({page:"Work", workSection:w}));
@@ -85,7 +92,7 @@ const render = (patch) => {
   render({page:"Work", workSection:"approvals", workViews:{approvals:v}}));
 ["contacts","files","ontology"].forEach(r => render({page:"Records", recSection:r}));
 ["7d","30d","90d"].forEach(r => render({page:"Dashboard", range:r}));
-["sales","cash","operations"].forEach(a => render({page:"Dashboard", aspect:a}));
+["sales","production","fleet","quarry","accounts","safety"].forEach(a => render({page:"Dashboard", aspect:a}));
 ["all","people","ai","attention"].forEach(k => render({page:"Activity", actKpi:k}));
 render({page:"Home", miniOpen:true});
 render({page:"Home", paletteOpen:true});

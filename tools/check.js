@@ -38,7 +38,7 @@ try {
 console.log("  ok  syntax");
 
 const PAGES = ["Home","Agents","Dashboard","Work","Records","Activity","Settings",
-               "Organisations","People","Teams","Locations","Site visits"];
+               "Organisations","People","Teams","Locations","Site visits","Loads"];
 const seen = new Set();
 let failed = 0;
 for (const page of PAGES) {
